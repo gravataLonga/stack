@@ -62,6 +62,40 @@ func TestStack_PopOnEmptyStack(t *testing.T) {
 	}
 }
 
+func TestStack_Peek(t *testing.T) {
+	s := New()
+	a := "hello"
+	s.Push(a)
+	p, ok := s.Peek()
+
+	if !ok {
+		t.Errorf("Unable to peek value")
+	}
+
+	if s.IsEmpty() {
+		t.Fatalf("Stack can't be empty, we are only peek")
+	}
+
+	if p != a {
+		t.Errorf("Peek value isn't equal to pushed value")
+	}
+
+}
+
+func TestStack_PeekOnEmpty(t *testing.T) {
+	s := New()
+	p, ok := s.Peek()
+
+	if ok {
+		t.Errorf("return value was true")
+	}
+
+	if p != nil {
+		t.Errorf("peek value isn't nil")
+	}
+
+}
+
 func BenchmarkNew(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		s := New()

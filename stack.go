@@ -30,3 +30,11 @@ func (s *Stack) Pop() (interface{}, bool) {
 	s.stack = s.stack[:len(s.stack)-1]
 	return e, true
 }
+
+func (s *Stack) Peek() (interface{}, bool) {
+	if s.IsEmpty() {
+		return nil, false
+	}
+
+	return s.stack[len(s.stack)-1], true
+}
