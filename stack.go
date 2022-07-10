@@ -1,27 +1,27 @@
 package stack
 
-// Stack save every element as stack
-type Stack struct {
+// stack save every element as stack
+type stack struct {
 	stack []interface{}
 }
 
 // New create a new stack
-func New() *Stack {
-	return &Stack{}
+func New() *stack {
+	return &stack{}
 }
 
 // IsEmpty check if stack is empty
-func (s *Stack) IsEmpty() bool {
+func (s *stack) IsEmpty() bool {
 	return len(s.stack) <= 0
 }
 
 // Push new item to top of stack
-func (s *Stack) Push(e interface{}) {
+func (s *stack) Push(e interface{}) {
 	s.stack = append(s.stack, e)
 }
 
 // Pop first element of stack
-func (s *Stack) Pop() (interface{}, bool) {
+func (s *stack) Pop() (interface{}, bool) {
 	if s.IsEmpty() {
 		return nil, false
 	}
@@ -31,7 +31,7 @@ func (s *Stack) Pop() (interface{}, bool) {
 	return e, true
 }
 
-func (s *Stack) Peek() (interface{}, bool) {
+func (s *stack) Peek() (interface{}, bool) {
 	if s.IsEmpty() {
 		return nil, false
 	}

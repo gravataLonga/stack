@@ -6,7 +6,7 @@ func TestStack_IsEmpty(t *testing.T) {
 	s := New()
 
 	if !s.IsEmpty() {
-		t.Fatalf("Stack is not empty")
+		t.Fatalf("stack is not empty")
 	}
 }
 
@@ -16,7 +16,7 @@ func TestStack_Push(t *testing.T) {
 	s.Push(true)
 
 	if s.IsEmpty() {
-		t.Fatalf("Stack is empty")
+		t.Fatalf("stack is empty")
 	}
 }
 
@@ -26,7 +26,7 @@ func TestStack_Pop(t *testing.T) {
 	s.Pop()
 
 	if !s.IsEmpty() {
-		t.Fatalf("Stack is not empty")
+		t.Fatalf("stack is not empty")
 	}
 }
 
@@ -37,7 +37,7 @@ func TestStack_PopGetSameElement(t *testing.T) {
 	p, _ := s.Pop()
 
 	if !s.IsEmpty() {
-		t.Fatalf("Stack is not empty")
+		t.Fatalf("stack is not empty")
 	}
 
 	if p != a {
@@ -50,7 +50,7 @@ func TestStack_PopOnEmptyStack(t *testing.T) {
 	p, ok := s.Pop()
 
 	if !s.IsEmpty() {
-		t.Fatalf("Stack is not empty")
+		t.Fatalf("stack is not empty")
 	}
 
 	if p != nil {
@@ -73,7 +73,7 @@ func TestStack_Peek(t *testing.T) {
 	}
 
 	if s.IsEmpty() {
-		t.Fatalf("Stack can't be empty, we are only peek")
+		t.Fatalf("stack can't be empty, we are only peek")
 	}
 
 	if p != a {
